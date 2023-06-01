@@ -1,0 +1,14 @@
+[Unit]
+Description=http server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+User=songcan
+RestartSec=10
+ExecStart=/home/songcan/bin/httpd -d /home/user -p 80 -a user:password
+
+[Install]
+WantedBy=multi-user.target
